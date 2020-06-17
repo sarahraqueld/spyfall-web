@@ -1,9 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Router } from 'react-router-dom';
 import './index.css';
 import App from "./pages/App";
+import history from "./history";
 
 ReactDOM.render(
-    <App />,
-    document.getElementById('root')
+	<Router history={history}>
+		<App />
+	</Router>,
+	document.getElementById('root')
 )
