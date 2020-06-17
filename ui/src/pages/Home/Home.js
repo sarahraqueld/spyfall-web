@@ -1,5 +1,5 @@
 import React from 'react';
-import StartGame from "./StartGame";
+import StartGame from "../StartGame";
 
 class Home extends React.Component {
     constructor(props) {
