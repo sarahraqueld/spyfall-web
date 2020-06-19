@@ -1,4 +1,5 @@
 import Home from "../../pages/Home/Home";
+import Player from "../../pages/Player/Player";
 
 export const BASIC_ROUTER_CONFIG = [
 	{
@@ -7,4 +8,10 @@ export const BASIC_ROUTER_CONFIG = [
 		component: Home,
 		auth: []
 	},
+	{
+		path: '/players/:id',
+		exact: true,
+		component: Player,
+		auth: []
+	}
 ];

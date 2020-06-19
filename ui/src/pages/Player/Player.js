@@ -15,7 +15,8 @@ class Player extends React.Component {
   render(){
     return (
       <div>
-        <div id="reveal" onClick={this.reveal}> </div>
+        <div> Player 1 </div>
+        <div id="reveal" onClick={this.reveal}> reveal </div>
         { this.state.reveal && <div> Location: </div> }
       </div>
     );
