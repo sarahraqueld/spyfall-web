@@ -1,11 +1,11 @@
 import React from "react";
-import { shallow, mount} from 'enzyme/build';
+import { mount } from 'enzyme/build';
 import Home from './Home';
 
 describe('<Home />', () => {
 	const history = { push: jest.fn() };
 
-	it("should redirect to the start game page", () => {
+	it("should redirect to the new game page", () => {
 		const wrapper = mount(<Home history={history}/>);
 
 		wrapper.find('#start-game').simulate('click');
@@ -21,5 +21,4 @@ describe('<Home />', () => {
 
 		expect(history.push).toHaveBeenCalledWith('/games/join');
 	});
-
 });

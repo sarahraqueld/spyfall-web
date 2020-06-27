@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import FirebaseService from '../../services/FirebaseService';
 
-function StartNewGame() {
+function StartNewGame({history}) {
     const [gameId, setGameId] = useState(null);
 
     const getGameId = async () => {
@@ -9,12 +9,19 @@ function StartNewGame() {
         setGameId(gameId);
     }
 
+    const start = () => {
+        history.push('/games/start');
+    }
+
     useEffect(() => {
         getGameId();
     }, []);
 
     return (
-        <div> { gameId && <p> Your game id is: { gameId } </p> } </div>
+        <div> 
+            <div> { gameId && <p> Your game id is: { gameId } </p> } </div>
+            <button onClick={start}> I am ready! </button>
+        </div>
     ) 
 }
 
