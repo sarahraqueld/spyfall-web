@@ -1,24 +1,21 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import FirebaseService from '../../services/FirebaseService';
 
-class StartNewGame extends React.Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            gameId: null,
-        }
-    }
+function StartNewGame() {
+    const [gameId, setGameId] = useState(null);
 
-    async componentDidMount() {
+    const getGameId = async () => {
         const gameId = await FirebaseService.get();
-        this.setState({ gameId: gameId });
+        setGameId(gameId);
     }
 
-    render() {
-        return (
-            <div> { this.state.gameId && <p> Your game id is: { this.state.gameId } </p> } </div>
-        )
-    };
+    useEffect(() => {
+        getGameId();
+    }, []);
+
+    return (
+        <div> { gameId && <p> Your game id is: { gameId } </p> } </div>
+    ) 
 }
 
 export default StartNewGame;
