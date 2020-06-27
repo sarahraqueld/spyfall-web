@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router } from 'react-router-dom';
 import './index.css';
+import './normalize.css';
 import App from "./pages/App";
 import history from "./history";
 
