@@ -1,8 +1,8 @@
 import React from 'react';
 
-function Home(props) {
+function Home({history}) {
     const startGame = () => {
-        props.history.push('/games/new');
+        history.push('/games/new');
     }
 
     return (
