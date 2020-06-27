@@ -10,7 +10,7 @@ describe('<Home />', () => {
 		expect(wrapper.text()).toEqual('Start New Game');
 	});
 
-	it("should redirect to the first player's page", () => {
+	it("should redirect to the start game page", () => {
 		const wrapper = mount(<Home history={history}/>);
 
 		wrapper.find('button').simulate('click');
