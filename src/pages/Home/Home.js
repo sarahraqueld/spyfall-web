@@ -1,34 +1,17 @@
 import React from 'react';
-import FirebaseService from '../../services/FirebaseService';
 
-class Home extends React.Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            gameId: null,
-        }
+function Home(props) {
+    const startGame = () => {
+        props.history.push('/games/new');
     }
 
-    startGame = () => {
-        this.props.history.push('/players/1');
-    }
-
-    async componentDidMount() {
-        const gameId = await FirebaseService.get();
-        this.setState({ gameId: gameId });
-    }
-
-    render() {
-        return (
-            <div>
-                <button onClick={this.startGame}>
-                    Start Game
-                </button>
-
-                { this.state.gameId && <p> Your game id is: { this.state.gameId } </p> }
-            </div>
-        );
-    }
+    return (
+        <div>
+            <button onClick={startGame}>
+                Start New Game
+            </button>
+        </div>
+    )
 }
 
 export default Home;
