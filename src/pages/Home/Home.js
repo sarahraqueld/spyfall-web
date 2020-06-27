@@ -5,10 +5,18 @@ function Home({history}) {
         history.push('/games/new');
     }
 
+    const joinGame = () => {
+        history.push('/games/join');
+    }
+
     return (
         <div>
-            <button onClick={startGame}>
+            <button id="start-game" onClick={startGame}>
                 Start New Game
+            </button>
+
+            <button id="join-game" onClick={joinGame}>
+                Join game
             </button>
         </div>
     )

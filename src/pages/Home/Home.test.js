@@ -5,16 +5,21 @@ import Home from './Home';
 describe('<Home />', () => {
 	const history = { push: jest.fn() };
 
-	it('should render a start game text', () => {
-		const wrapper = shallow(<Home />);
-		expect(wrapper.text()).toEqual('Start New Game');
-	});
-
 	it("should redirect to the start game page", () => {
 		const wrapper = mount(<Home history={history}/>);
 
-		wrapper.find('button').simulate('click');
+		wrapper.find('#start-game').simulate('click');
 
 		expect(history.push).toHaveBeenCalledWith('/games/new');
 	});
+
+
+	it("should redirect to the join game page", () => {
+		const wrapper = mount(<Home history={history}/>);
+
+		wrapper.find('#join-game').simulate('click');
+
+		expect(history.push).toHaveBeenCalledWith('/games/join');
+	});
+
 });
