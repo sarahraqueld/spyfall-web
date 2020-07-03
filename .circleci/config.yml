@@ -24,7 +24,8 @@ jobs:
             - run: npm install
             - run: npm test
   deploy:
-    executor: default
+    docker:
+      - image: docker:stable-git
     steps:
       - checkout
       - run:
