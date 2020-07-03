@@ -10,14 +10,21 @@ class Player extends React.Component {
     }
   }
 
-  async componentDidMount() {
-    const player = await PlayerApi.get();
+  setPlayer = async () => {
+    const urlParams = this.props?.match?.params
+    const playerId = urlParams?.id;
+    const gameId = urlParams?.gameId;
+    const player = await PlayerApi.get(gameId, playerId);
     this.setState({player: player});
   }
 
-  reveal = () => {
-    this.setState({reveal: true});
+  componentDidMount() {
+    this.setPlayer();
   }
+
+  reveal = () => 
+    this.setState({reveal: true});
+  
 
   spyOrLocation = () => 
     this.state.player?.spy ? <div>You are a Spy </div> : <div>Location: {this.state.player?.location}</div>
