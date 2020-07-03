@@ -1,3 +1,7 @@
+# Spyfall
+
+[![sarahraqueld/](https://circleci.com/gh/sarahraqueld/spyfall-web.svg?style=svg)](https://app.circleci.com/pipelines/github/sarahraqueld/spyfall-web)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
