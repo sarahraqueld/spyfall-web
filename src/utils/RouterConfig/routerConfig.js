@@ -11,7 +11,7 @@ export const BASIC_ROUTER_CONFIG = [
 		auth: []
 	},
 	{
-		path: '/players/:id',
+		path: '/games/:gameId/players/:id',
 		exact: true,
 		component: Player,
 		auth: []

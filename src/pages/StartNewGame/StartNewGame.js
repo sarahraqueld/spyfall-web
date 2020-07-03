@@ -10,7 +10,7 @@ function StartNewGame({history}) {
     }
 
     const start = () => {
-        history.push('/players/1');
+        history.push(`/games/${gameId}/players/1`);
     }
 
     useEffect(() => {
